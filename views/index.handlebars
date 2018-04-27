@@ -8,7 +8,7 @@
                 <label for="">Please type your burger selection </label>
                 <input type="text" class="form-control" id="burger-name" autofocus="autofocus" placeholder="Type in your Burger">
             </div>
-           <button type="submit" class="btn btn-primary">Submit</button> 
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 
@@ -74,13 +74,16 @@
 
 <footer>
     <div class="container" id="most-popular">
-        <h3>The most popular burger is:</h3>
-        <h1>
-            {{popular_burger}}
-        </h1>
+
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+            <h3>The most popular burger here is:</h3>
+            <h1>
+                {{popular_burger}}
+            </h1>
+        </div>
+
+        <div class="col-md-2"></div>
     </div>
 </footer>
-
-
-
-

@@ -9,15 +9,14 @@ router.get("/", function (req, res) {
     hbsObject = {
       burgers: data
     };
-    console.log(hbsObject);
     burger.mostPopular(function (data){
       popular = {
         popular_burger: data
       };
-      console.log(hbsObject, popular);
-      res.render("index", {hbsObject, popular});
-      // res.render("index", hbsObject);
-      // res.render("index", popular);
+      res.render('index', {
+        burgers: hbsObject.burgers,
+        popular_burger: popular.popular_burger[0].popular_burger
+      });
     });
   });
 });
@@ -26,21 +25,12 @@ router.post("/api/burger", function (req, res) {
   burger.insertOne(req.body, function(result){
 
     if (result.affectedRows == 0) {
-      console.log(res);
       return res.status(404).end();
     } else {
-      console.log("new burger added");
       res.status(200).end();
     }
   })
 });
-
-// router.post("/api/burger", function(req, res) {
-//   console.log("got here");
-//   burger.insertOne(req.body, function(result) {
-//       res.json({ id: result.insertId });
-//   })
-// });
 
 router.put("/api/burger/:id", function (req, res) {
   var burgerId = req.params.id;
@@ -56,6 +46,5 @@ router.put("/api/burger/:id", function (req, res) {
     }
   })
 });
-
 
 module.exports = router;

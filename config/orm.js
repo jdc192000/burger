@@ -33,8 +33,6 @@ var orm = {
     },
     // most popular burger
     mostPopular: function (tableInput, col, cb) {
-        // var queryString = "select ?? as popular_burger, count(*) as popular from ?? group by ?? having count(*) = (select max(popular) from select count(*) as popular from ?? group by ??) SubQueryAlias);";
-
         var queryString = "select ?? as popular_burger,";
         queryString += "count(*) as popular";
         queryString += "   From  ??";
