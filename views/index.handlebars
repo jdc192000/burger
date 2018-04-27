@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4" id="main-title">
+        <h1 class="title">Burgerteria</h1>
+        <form class="create-burger">
+            <div class="form-group">
+                <label for="">Please type your burger selection </label>
+                <input type="text" class="form-control" id="burger-name" autofocus="autofocus" placeholder="Type in your Burger">
+            </div>
+           <button type="submit" class="btn btn-primary">Submit</button> 
+        </form>
+    </div>
+
+    <div class="col-md-4"></div>
+</div>
+
+<div class="container">
+    <div class="col-md-5">
+        <div class="visible" id="wish-list">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            <h3>My Wish Lists of Burgers</h3>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each burgers}}
+                    <tr>
+                        {{#unless devoured}}
+                        <td>
+                            {{this.burger_name}}
+                        </td>
+                        <td>
+                            <button data-burgerid="{{this.id}}" class="devoure">Devoure it!</button>
+                        </td>
+                        {{/unless}}
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="col-md-2"></div>
+
+    <div class="col-md-5">
+        <div class="visible" id="devoured">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            <h3>Burgers Eaten</h3>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each burgers}}
+                    <tr>
+                        {{#if devoured}}
+                        <td>
+                            {{this.burger_name}}
+                        </td>
+                        {{/if}}
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container" id="most-popular">
+        <h3>The most popular burger is:</h3>
+        <h1>
+            {{popular_burger}}
+        </h1>
+    </div>
+</footer>
+
+
+
+
