@@ -1,14 +1,10 @@
 body {
-  /* background-color: rgb(230, 177, 173); */
     height: 100vh;
     margin: 0;
     animation-name: example;
-    /* background-color: red; */
     animation-name: example;
     animation-duration: 10s;
     animation-iteration-count: infinite;
-    /* background: radial-gradient(#893d38, #2b1004); */
-    /* background-repeat: no-repeat; */
 }
 
 li {
@@ -16,16 +12,26 @@ li {
   margin: 5px;
   background: #554838;
   }
+
+/* tr {
+  overflow-y: scroll;
+  overflow: scroll;
+  max-height:300px;
+  height: 50%;
+  width: 95%;
+} */
+
+/* .scrollable {
+  overflow-y: scroll;
+  max-height: 50px;
+  /* height: 50%; */
+  /* height: 300px;
+  width: 95%; */
+/* } */ 
   
 .label {
   font-weight: bold;
  }
-  
-.create-update-form {
-  padding: 5px;
-  margin: 5px;
-  background: aqua;
-}
   
 .form-group {
   margin-bottom: 5px;
@@ -41,10 +47,11 @@ li {
 
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes example {
-  0%   {background-color: rgb(156, 133, 133);}
+  0%   {background-color: rgb(200, 137, 18);}
   25%  {background-color: rgb(196, 116, 24);}
-  50%  {background-color: rgb(173, 230, 185);}
-  100% {background-color: rgb(238, 241, 71);}
+  50%  {background-color: rgb(182, 127, 26);}
+  75%  {background-color: rgb(196, 116, 24);}
+  100%  {background-color: rgb(200, 137, 24);}
 }
 
 /* Standard syntax */

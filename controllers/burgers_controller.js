@@ -9,7 +9,7 @@ router.get("/", function (req, res) {
     hbsObject = {
       burgers: data
     };
-    burger.mostPopular(function (data){
+    burger.mostPopular(function (data) {
       popular = {
         popular_burger: data
       };
@@ -22,7 +22,7 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/burger", function (req, res) {
-  burger.insertOne(req.body, function(result){
+  burger.insertOne(req.body, function (result) {
 
     if (result.affectedRows == 0) {
       return res.status(404).end();
@@ -34,8 +34,10 @@ router.post("/api/burger", function (req, res) {
 
 router.put("/api/burger/:id", function (req, res) {
   var burgerId = req.params.id;
+
   var val = {
-    devoured: 1
+    devoured: 1,
+    reordered: 0
   }
 
   burger.updateOne(val, burgerId, function (result) {

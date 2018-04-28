@@ -15,7 +15,7 @@ $(function () {
     );
   });
 
-  $(".create-burger").on("submit", function(event) {
+  $(".create-burger").on("submit", function (event) {
     event.preventDefault();
 
     var newBurger = {
@@ -27,8 +27,26 @@ $(function () {
       type: "POST",
       data: newBurger
     }).then(
-      function() {
+      function () {
         console.log("created new burger");
+        location.reload();
+      }
+    );
+  });
+
+  $(".reorder").on("click", function (event) {
+    var burgerName = $(this).data("burger-name");
+    console.log(burgerName);
+    var burgerReorder = {
+      burger_name: burgerName,
+      devoured: 0,
+      reordered: 0
+    };
+    $.ajax("/api/burger/", {
+      type: "POST",
+      data: burgerReorder
+    }).then(
+      function () {
         location.reload();
       }
     );
